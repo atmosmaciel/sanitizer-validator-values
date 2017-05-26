@@ -1,15 +1,15 @@
 <?php
 
-namespace Api\Service\SanitizerValidatorValues;
+namespace src\Provider;
 
-class ValidateValues
+use src\Service\ValidateService;
+
+class ValidateProvider
 {
-    private $sanitize;
     private $validate;
 
     public function __construct()
     {
-        $this->sanitize = new Sanitize();
         $this->validate = new Validate();
     }
 
@@ -39,7 +39,7 @@ class ValidateValues
             $validPhone = $this->validate->phone($input);
         }
 
-        if (!$validPhone == true) { //ou seja, se não for igual a 1; 0=false; FALSE = se ocorrer erro;
+        if (!$validPhone == true) {
             $validPhone = "deu merda";
         } else {
             $validPhone = $input;
@@ -61,4 +61,3 @@ class ValidateValues
         return $validUrl = $this->validate->url($sanitizedUrl);
     }
 }
-

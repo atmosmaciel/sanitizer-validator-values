@@ -1,8 +1,8 @@
 <?php
 
-namespace Api\Service\SanitizerValidatorValues;
+namespace src\Service;
 
-class Sanitize
+class SanitizeService
 {
     public function stringSpecialCaracteres($input = null) {
         return $stringSpecial = filter_var($input, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -22,4 +22,3 @@ class Sanitize
         return $url = filter_var($input, FILTER_SANITIZE_URL);
     }
 }
-

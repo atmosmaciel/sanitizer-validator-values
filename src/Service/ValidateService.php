@@ -1,8 +1,8 @@
 <?php
 
-namespace Api\Service\SanitizerValidatorValues;
+namespace src\Service;
 
-class Validate
+class ValidateService
 {
     public function string($input = null)
     {
@@ -23,4 +23,3 @@ class Validate
         return $url = filter_var($input, FILTER_VALIDATE_URL);
     }
 }
-

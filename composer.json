@@ -1,0 +1,25 @@
+{
+    "name": "atmosmaciel/sanitize-validator-value",
+    "description": "simple lib for validate end sanitize data",
+    "minimum-stability": "dev",
+    "authors":[
+       {
+           "name": "Atmos Maciel",
+           "email": "atmos.mps@gmail.com"
+       }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^6.1.*"
+    },
+    "require": {
+    	"silex/silex": "^2.0",
+    },
+    "config": {
+        "bin-dir": "bin/"
+    },
+    "autoload": {
+    	"psr-4": {
+    		"":"src/"
+    	}
+    }
+}
