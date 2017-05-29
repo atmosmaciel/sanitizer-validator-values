@@ -2,23 +2,21 @@
 
 namespace src\Service;
 
-class SanitizeService
+class SanitizeService extends BaseService
 {
-    public function stringSpecialCaracteres($input = null) {
-        return $stringSpecial = filter_var($input, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    }
-
-    public function string($input = null)
+    public function string(string $input)
     {
-        $string = filter_var($input, FILTER_SANITIZE_STRING);
-        return $sanitizeString = filter_var($this->stringSpecialCaracteres($string));
+        $string = $this->stringSpecialCaracteres($input);
+        return $sanitizedString = filter_var($string, FILTER_SANITIZE_STRING);
     }
 
-    public function email($input = null) {
+    public function email(string $input)
+    {
         return $email = filter_var($input, FILTER_SANITIZE_EMAIL);
     }
 
-    public function url($input = null) {
+    public function url(string $input)
+    {
         return $url = filter_var($input, FILTER_SANITIZE_URL);
     }
 }
